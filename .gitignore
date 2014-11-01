@@ -1,1 +1,4 @@
 **/nbactions.xml
+**/glassfish-web.xml
+**/*.NavData
+**/target/
