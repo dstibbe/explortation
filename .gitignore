@@ -2,4 +2,5 @@
 **/glassfish-web.xml
 **/*.NavData
 **/target/
-/JSF/contracts/target/
+**/*~
+**/*.swp
