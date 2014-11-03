@@ -3,14 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
   http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-    
-    <display-name>Contracts Demo</display-name>
+
+    <display-name>Flow Demo</display-name>
 
     <!-- Change to "Production" when you are ready to deploy -->
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+
+    <!-- required for faces flow -->
+    <context-param>
+        <param-name>javax.faces.CLIENT_WINDOW_MODE</param-name>
+        <param-value>url</param-value>
+    </context-param>
+
 
     <!-- JSF mapping -->
     <servlet>
@@ -38,6 +45,6 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>index-default.xhtml</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>

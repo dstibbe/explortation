@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+              version="2.2">
+
+    <flow-definition id="demo">
+
+        <start-node>demo-start</start-node>
+
+        <view id="demo-start">
+            <vdl-document>/demo/demo-start.xhtml</vdl-document>
+        </view>
+
+        <flow-return id="demo-return">
+            <from-outcome>demo-return.xhtml</from-outcome>
+        </flow-return>
+
+
+        <navigation-rule>
+            <!-- would have expected the view 'id' as previously defined -->
+            <from-view-id>/demo/demo-start.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>SUCCESS</from-outcome>
+                <to-view-id>demo-step-two</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+
+        <method-call>
+            <method id="demo-step-two">#{secondAction.execute}</method>
+            <default-outcome>NO</default-outcome>
+        </method-call>
+<!--        <navigation-rule>
+            <from-view-id>demo-step-two</from-view-id>
+            <navigation-case>
+                <from-outcome>YES</from-outcome>
+                <to-view-id>demo-return</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>NO</from-outcome>
+                <to-view-id>demo-start</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
+
+        <method-call id="demo-step-three">
+            <method>#{thirdAction.execute}</method>
+        </method-call>
+        <navigation-rule>
+            <from-view-id>demo-step-three</from-view-id>
+            <navigation-case>
+                <from-outcome>#{demo-step-three.STATES.FAILURE}</from-outcome>
+                <to-view-id>demo-start</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>#{demo-step-three.STATES.SUCCESS}</from-outcome>
+                <to-view-id>demo-return</to-view-id>
+            </navigation-case>
+        </navigation-rule>-->
+
+
+
+    </flow-definition>
+
+
+</faces-config>
