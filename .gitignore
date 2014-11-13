@@ -7,3 +7,6 @@
 **/*.swp
 /jsf2.2/libraries/target/
 /jsf2.2/flow/target/
+/AngularTest/nbproject/private/
+/HTML5Test/nbproject/private/
+/simple-angular-1/nbproject/private/
