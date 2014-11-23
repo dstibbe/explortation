@@ -5,10 +5,11 @@
 
 
 <form >
+    <label for="inputSomething"> Modify text: </label>
     <input required type="text" ng-model="myModel.something"
            id="inputSomething" name="something">
 </form>
 
 <div>
-    {{myModel.something}}
+    The following text will be modified by the input box: <span>{{myModel.something}}</span>
 </div>
