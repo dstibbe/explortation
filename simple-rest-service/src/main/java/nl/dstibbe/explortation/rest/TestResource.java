@@ -7,7 +7,6 @@ package nl.dstibbe.explortation.rest;
 
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -40,8 +39,9 @@ public class TestResource {
     @GET
     @Produces("text/plain")
     public String getText() {
-        //TODO return proper representation object
-        return "Testje";
+        String response = "Testje";
+        System.out.println("Sending GET: " + response);
+        return response;
     }
 
     /**
@@ -53,5 +53,6 @@ public class TestResource {
     @PUT
     @Consumes("text/plain")
     public void putText(String content) {
+        System.out.println("Received PUT: " + content);
     }
 }
