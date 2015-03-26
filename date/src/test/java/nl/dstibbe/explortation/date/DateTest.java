@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class DateTest {
@@ -30,6 +31,8 @@ public class DateTest {
         System.out.println("Antigua formatted date: " + dateInAntigua);
         System.out.println("Antigua timestamp (rel to epoch): " + dateInAntigua.getTime());
         System.out.println("Antigua formatted date (CET): " + cetFormat.format(dateInAntigua));
+
+        Assert.assertEquals("Dates are not equal", dateInPalau.getTime() / 1000, dateInAntigua.getTime() / 1000);
 
     }
 
