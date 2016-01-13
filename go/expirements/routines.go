@@ -30,11 +30,9 @@ func read(c chan int) {
 
 func readRange(c chan int) {
 	fmt.Println("Read")
- 	for  {
 		for r := range c {
 	 		fmt.Printf("Read: %d\n", r)
 		} 
-	}
 }
 
 
