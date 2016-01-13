@@ -1,9 +1,18 @@
+/**
+ * Copyright (c) 2016 DStibbe 
+ */ 
+ 
 package main
 
 import (
 	"fmt"
 	"time"
 )
+
+/**
+Playing with goroutines
+*/
+
 
 func fill(c chan int) {
 	fmt.Println("Fill")
