@@ -28,12 +28,21 @@ func read(c chan int) {
 	}
 }
 
+func readRange(c chan int) {
+	fmt.Println("Read")
+ 	for  {
+		for r := range c {
+	 		fmt.Printf("Read: %d\n", r)
+		} 
+	}
+}
+
 
 func main() {
 	ch := make(chan int,4)
 	fmt.Println("Start")
 	go fill(ch)
-	go read(ch)
+	go readRange(ch)
 	
 	fmt.Println("end?")
 
